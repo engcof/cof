@@ -324,9 +324,9 @@ main {
     }
 }
  .hero-content {
-     max-width: 1000px;
+     max-width: 1200px;
      padding: 80px 40px;
-	 margin-top: 120px;
+	 margin-top: 40px;
      animation: heroAppear 2.5s ease-out;
      position: relative;
      background: none;
