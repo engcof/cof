@@ -6,6 +6,26 @@
      box-sizing: border-box;
      direction: rtl;
 }
+/* === الألوان الرسمية  === */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --text-lighter: #94a3b8;
+  --border: #e2e8f0;
+  --glass: rgba(255, 255, 255, 0.75);
+  --glass-strong: rgba(255, 255, 255, 0.92);
+  --accent: #10b981;        
+  --accent-hover: #059669;
+  --edit: #fcd34d;
+  --edit-hover: #f59e0b;
+  --danger:#ef4444;
+  --danger-hover:#dc2626;
+  --shadow:0 8px 32px rgba(0,0,0,0.08);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 body {
      font-family: 'Arail', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
      background: #000;
@@ -548,10 +568,14 @@ main {
     margin-bottom: 32px;
 }
 /* === 2. تنسيق شريط البحث (Search Bar) === */
+/* شريط البحث */
 .search-bar {
     margin-bottom: 32px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
+    background: var(--glass); /* استخدام كلاس الزجاج */
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
 }
 .search-form {
     display: flex;
@@ -559,37 +583,45 @@ main {
     max-width: 600px;
     margin: 0 auto;
 }
-.search-form input[type="text"]  {
+.search-form input {
     flex: 1;
+    /* تطبيق خصائص الإدخال الأساسية يدوياً */
     padding: 14px 20px;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     font-size: 1rem;
     background: white;
+    transition: var(--transition);
 }
 .search-form input:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(16,185,129,0.15);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
 }
 .search-btn {
     background: var(--accent);
     color: white;
     border: none;
     padding: 14px 20px;
-    border-radius: 16px;
+    border-radius: var(--radius);
     cursor: pointer;
+    display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
+    transition: var(--transition);
+}
+.search-btn:hover {
+    background: var(--accent-hover);
 }
 .clear-search {
     display: block;
     text-align: center;
     margin-top: 12px;
-    color: var(--danger);
+    color: var(--accent);
     font-size: 0.95rem;
 }
+
 /* === 3. تنسيق بطاقات الأعضاء (Grid) === */
 .members-list {
     display: grid;
