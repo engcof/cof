@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="/static/icon/favicon.ico">
-   <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+   <link rel="stylesheet" href="/static/css/style.css">
     <title></title>
 </head>
 <body>
@@ -115,7 +115,7 @@
     </section>
     </main>
   <!-- إضافة ملفات JavaScript مشتركة هنا -->
-    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+    <script src="static/js/main.js"></script>
     <script>
 document.getElementById('onlineToggle')?.addEventListener('click', function(e) {
     e.stopPropagation();
