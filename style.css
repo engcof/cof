@@ -585,7 +585,6 @@ main {
 }
 .search-form input {
     flex: 1;
-    /* تطبيق خصائص الإدخال الأساسية يدوياً */
     padding: 14px 20px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
