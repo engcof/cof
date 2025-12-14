@@ -1,45 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <title>Hottiyya Page</title>
-</head>
-<body>
-    <!-- Epic Neural Background -->
-    <div class="neural-background"></div>
+{% extends "base.html" %}
+{% block title %}شجرة العائلة - الأسماء العائلية{% endblock %}
 
-    <!-- Header -->
-    <header class="glass">
-        <nav>
-            <a href="#" class="logo">
-                <svg class="logo-icon" viewBox="0 0 100 100">
-                </svg>
-                الحـوطية
-            </a>
-            <ul class="nav-links"> 
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#">اتصل بنا</a></li>
-                <li><a href="#">عننا</a></li>
-                <li><a href="#">المساعدة</a></li> 
-            </ul>
-            <div class="mobile-menu-toggle">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            </div>
-        </nav>
-        <div class="mobile-nav">
-            <a href="#">الرئيسية</a>
-            <a href="#">اتصل بنا</a>
-            <a href="#">عننا</a>
-            <a href="#">المساعدة</a>
-        </div>
-    </header>  
-    
+{% block content %}
     <section class="hero">
-        <div class="hero-content">    
+        <div class="container">    
             <div class="section-header">
                 <h1 class="page-title">شجرة العائلة</h1>
                 <a href="#" class="btn-add">
@@ -74,7 +38,7 @@
                        
                         <a href="#" class="btn-f-action btn-f-edit">تعديل</a>
                       
-                        <form method="post" action="#" style="display:inline;" onsubmit="return confirm('هل أنت متأكد من حذف {{ m.full_name }}؟');">
+                        <form method="post" action="#" style="display:inline;" onsubmit="return confirm('هل أنت متأكد من حذف ؟');">
                             <button type="submit" class="btn-f-action btn-f-delete">حذف</button>
                         </form>
                       
@@ -86,19 +50,6 @@
         </div>
     </section>
     
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">سياسة الخصوصية</a>
-                <a href="#">شروط الاستخدام</a>
-                <a href="/about">عن الموقع</a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 عائلة الحوطية • جميع الحقوق محفوظة
-            </div>
-            <div style="margin-top:12px;color:#10b981;font-weight:600;">صُمم بـ ❤ بواسطة Osmancof</div>
-        </div>
-    </footer>
+  
     <script src="scripts.js"></script>
-</body>
-</html>
+{% endblock %}
