@@ -1,7 +1,71 @@
-{% extends "base.html" %}
-{% block title %}شجرة العائلة - الأسماء العائلية{% endblock %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/static/icon/favicon.ico">
+   <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    <title></title>
+</head>
+<body>
+    <header class="glass-strong">
+        <nav class="container">
+            <a href="/" class="logo">الحوطية</a>
+            <ul class="nav-links">
+                <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>الرئيسية</a></li>
+                <li><a href="#" {% if request.path.startswith('#') %}class="active"{% endif %}>الأخبار</a></li>
+                <li><a href="#" {% if request.path.startswith('#') %}class="active"{% endif %}>المقالات</a></li>
+            </ul>
+            <div class="user-area">
+                    <button class="user-btn" id="userBtn">
+                        <span class="avatar"></span>
+                        
+                     
+                        <span class="notification-badge"></span>
+                     
+                        <svg class="chevron" viewBox="0 0 24 24" width="16" height="16">
+                            <path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <div class="dropdown" id="userDropdown">
+                        <div class="dropdown-header">
+                            <span class="avatar big"></span>
+                            <div>
+                                <div class="name"></div>
+                                <div class="role">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="dropdown-link">
+                            صفحتي الشخصية
+                           
+                            <span class="notification-badge-inline"></span>
+                           
+                        </a>
+                        
+                        <a href="#" class="dropdown-link logout">تسجيل الخروج</a>
+                    </div>
+             
+                    <a href="#" style="padding:12px 28px;background:var(--accent);color:white;border-radius:50px;font-weight:600;">تسجيل الدخول</a>
+              
+            </div>
 
-{% block content %}
+            <button class="mobile-menu-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+
+        <div class="mobile-nav" id="mobileNav">
+            <a href="/">الرئيسية</a>
+            <a href="#">الأخبار</a>
+            <a href="#">المقالات</a>
+          
+           
+        </div>
+    </header>
+    <main>
     <section class="hero">
         <div class="container">    
             <div class="section-header">
@@ -49,7 +113,19 @@
 
         </div>
     </section>
-    
-  
-   
-{% endblock %}
+    </main>
+  <!-- إضافة ملفات JavaScript مشتركة هنا -->
+    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+    <script>
+document.getElementById('onlineToggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.getElementById('onlineList').classList.toggle('show');
+});
+
+// إغلاق القائمة لما تضغط بره
+document.addEventListener('click', function() {
+    document.getElementById('onlineList')?.classList.remove('show');
+});
+</script>
+</body>
+</html>
