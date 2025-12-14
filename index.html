@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <link rel="icon" href="/static/icon/favicon.ico">
-   <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="static/icon/favicon.ico">
+   <link rel="stylesheet" href="static/css/style.css">
     <title></title>
 </head>
 <body>
     <header class="glass-strong">
         <nav class="container">
-            <a href="/" class="logo">الحوطية</a>
+            <a href="#" class="logo">الحوطية</a>
             <ul class="nav-links">
-                <li><a href="/" {% if request.path == '/' %}class="active"{% endif %}>الرئيسية</a></li>
+                <li><a href="#" {% if request.path == '#' %}class="active"{% endif %}>الرئيسية</a></li>
                 <li><a href="#" {% if request.path.startswith('#') %}class="active"{% endif %}>الأخبار</a></li>
                 <li><a href="#" {% if request.path.startswith('#') %}class="active"{% endif %}>المقالات</a></li>
             </ul>
@@ -48,7 +48,7 @@
                         <a href="#" class="dropdown-link logout">تسجيل الخروج</a>
                     </div>
              
-                    <a href="#" style="padding:12px 28px;background:var(--accent);color:white;border-radius:50px;font-weight:600;">تسجيل الدخول</a>
+                  
               
             </div>
 
@@ -58,7 +58,7 @@
         </nav>
 
         <div class="mobile-nav" id="mobileNav">
-            <a href="/">الرئيسية</a>
+            <a href="#">الرئيسية</a>
             <a href="#">الأخبار</a>
             <a href="#">المقالات</a>
           
